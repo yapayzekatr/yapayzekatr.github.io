@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>Yapay Zeka TR</title>
+        <link>https://yapayzekatr.github.io</link>
+        <description>Yapay Zeka dünyasındaki son gelişmeler ve rehberler</description>
+        <item>
+            <title>Yapay Zeka Nedir?</title>
+            <link>https://yapayzekatr.github.io/yapay-zeka-nedir.html</link>
+            <description>Yapay zeka, bilgisayarların insanlar gibi düşünmesini sağlayan bir teknolojidir...</description>
+        </item>
+        <item>
+            <title>Yapay Zekanın Geleceği</title>
+            <link>https://yapayzekatr.github.io/yapay-zekanin-gelecegi.html</link>
+            <description>YZ teknolojileri, birçok sektörde devrim yaratıyor...</description>
+        </item>
+    </channel>
+</rss>
