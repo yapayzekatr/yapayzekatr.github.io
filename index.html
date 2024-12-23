@@ -115,4 +115,56 @@
 
         <div class="content-section">
             <h2>Yapay Zekanın Geleceği</h2>
-            <blockquote>"Geleceğin yapay zekası, insan hayatını dönüştürebile
+            <blockquote>"Geleceğin yapay zekası, insan hayatını dönüştürebilecek potansiyele sahiptir."</blockquote>
+            <p>YZ teknolojileri hızla gelişiyor ve birçok sektörde devrim yaratıyor. Özellikle sağlık, finans ve eğitim gibi kritik alanlarda 
+            yeni çözümler sunmaya devam ediyor. Gelecekte, yapay zekanın insana daha fazla entegre olduğu bir dünyaya şahit olabiliriz.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Yapay Zeka Rehberleri</h2>
+            <ul>
+                <li><a href="https://openai.com" target="_blank">OpenAI</a> - Yapay zeka araştırmaları ve geliştirme platformu.</li>
+                <li><a href="https://www.tensorflow.org" target="_blank">TensorFlow</a> - Açık kaynaklı yapay zeka kütüphanesi.</li>
+                <li><a href="https://pytorch.org" target="_blank">PyTorch</a> - Makine öğrenimi için güçlü bir çerçeve.</li>
+                <li><a href="https://www.coursera.org" target="_blank">Coursera - AI Courses</a> - Yapay zeka eğitim kursları.</li>
+                <li><a href="https://towardsdatascience.com" target="_blank">Towards Data Science</a> - Yapay zeka ve veri bilimi makaleleri.</li>
+                <li><a href="https://www.kaggle.com" target="_blank">Kaggle</a> - Veri bilimciler için yarışmalar ve veri setleri.</li>
+                <li><a href="https://github.com/topics/artificial-intelligence" target="_blank">GitHub - AI Projects</a> - Yapay zeka projeleri deposu.</li>
+                <li><a href="https://machinelearningmastery.com" target="_blank">Machine Learning Mastery</a> - Makine öğrenimi rehberleri.</li>
+                <li><a href="https://deepai.org" target="_blank">DeepAI</a> - Yapay zeka araçları ve API'ler.</li>
+                <li><a href="https://aiethicslab.com" target="_blank">AI Ethics Lab</a> - Yapay zeka etiği üzerine çalışmalar.</li>
+            </ul>
+        </div>
+
+        <div class="ad-section"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Yapay Zeka TR. Tüm hakları saklıdır.</p>
+    </footer>
+<div id="consent-banner" style="position:fixed;bottom:0;width:100%;background:#000;color:#fff;text-align:center;padding:10px;display:none;z-index:9999;">
+    Bu site, size daha iyi bir deneyim sunmak için çerezler kullanır.
+    <button id="accept-consent" style="background:#4CAF50;color:#fff;padding:5px 10px;border:none;border-radius:5px;margin-left:10px;">Kabul Et</button>
+    <button id="manage-consent" style="background:#f0ad4e;color:#fff;padding:5px 10px;border:none;border-radius:5px;margin-left:10px;">Daha Fazla Bilgi</button>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const consentBanner = document.getElementById('consent-banner');
+        const consentGiven = localStorage.getItem('consentGiven');
+
+        if (!consentGiven) {
+            consentBanner.style.display = 'block';
+        }
+
+        document.getElementById('accept-consent').addEventListener('click', function() {
+            localStorage.setItem('consentGiven', 'true');
+            consentBanner.style.display = 'none';
+        });
+
+        document.getElementById('manage-consent').addEventListener('click', function() {
+            alert('Çerezler yalnızca siteyi çalıştırmak ve kullanıcı deneyimini geliştirmek için kullanılır.');
+        });
+    });
+</script>
+</body>
+</html>
