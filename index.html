@@ -11,101 +11,108 @@
             src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
     <style amp-custom>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 0;
         }
         header {
             background-color: #007bff;
             color: white;
             text-align: center;
-            padding: 20px 0;
-            width: 100%;
+            padding: 40px 0;
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
         }
         footer {
             background-color: #343a40;
             color: white;
             text-align: center;
-            padding: 10px 0;
-            width: 100%;
+            padding: 20px 0;
+            font-size: 0.9rem;
         }
         .container {
+            max-width: 1200px;
+            margin: auto;
             padding: 20px;
-            max-width: 800px;
             text-align: center;
+        }
+        .content-section {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
         }
         .ad-section {
-            margin: 20px auto;
+            margin: 20px 0;
+            padding: 20px;
             text-align: center;
-            background-color: #f1f1f1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            max-width: 600px;
+            background-color: #e9ecef;
+            border: 1px dashed #ddd;
+            border-radius: 10px;
         }
         blockquote {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             font-style: italic;
             color: #555;
             border-left: 5px solid #007bff;
-            padding-left: 10px;
+            padding-left: 15px;
             margin: 20px 0;
+        }
+        ul {
+            text-align: left;
+            margin: 20px auto;
+            padding: 0;
+            list-style-type: none;
+            max-width: 800px;
+        }
+        ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        ul li a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        ul li a:hover {
+            text-decoration: underline;
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #333;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Yapay Zeka TR</h1>
-        <p>Yapay zeka dünyasındaki son gelişmeler ve rehberler</p>
+        Yapay Zeka TR
+        <p style="font-size: 1rem; font-weight: 300;">Yapay zeka dünyasındaki son gelişmeler ve rehberler</p>
     </header>
 
     <amp-auto-ads type="adsense" data-ad-client="ca-pub-8122979915343155"></amp-auto-ads>
 
     <div class="container">
-        <article>
+        <div class="content-section">
             <h2>Yapay Zeka Nedir?</h2>
             <blockquote>"Yapay zeka, makinelerin insan gibi düşünme ve öğrenme yeteneğini kazanmasını sağlayan bir bilim dalıdır."</blockquote>
             <p>Yapay zeka (YZ), bilgisayarların insanlar gibi düşünmesini, öğrenmesini ve problem çözmesini sağlayan bir bilim dalıdır. 
             Günümüzde tıbbi teşhis, dil işleme, görüntü tanıma gibi alanlarda yoğun bir şekilde kullanılmaktadır. 
             YZ, makine öğrenimi ve derin öğrenme algoritmalarıyla sürekli gelişiyor ve hayatımızın birçok alanını etkiliyor.</p>
-        </article>
+        </div>
 
         <div class="ad-section">
             <amp-auto-ads type="adsense" data-ad-client="ca-pub-8122979915343155"></amp-auto-ads>
         </div>
 
-        <article>
+        <div class="content-section">
             <h2>Yapay Zekanın Geleceği</h2>
-            <blockquote>"Geleceğin yapay zekası, insan hayatını dönüştürebilecek potansiyele sahiptir."</blockquote>
-            <p>YZ teknolojileri hızla gelişiyor ve birçok sektörde devrim yaratıyor. Özellikle sağlık, finans ve eğitim gibi kritik alanlarda 
-            yeni çözümler sunmaya devam ediyor. Gelecekte, yapay zekanın insana daha fazla entegre olduğu bir dünyaya şahit olabiliriz.</p>
-        </article>
-
-        <h2>Yapay Zeka Rehberleri</h2>
-        <ul>
-            <li><a href="https://openai.com" target="_blank">OpenAI</a> - Yapay zeka araştırmaları ve geliştirme platformu.</li>
-            <li><a href="https://www.tensorflow.org" target="_blank">TensorFlow</a> - Açık kaynaklı yapay zeka kütüphanesi.</li>
-            <li><a href="https://pytorch.org" target="_blank">PyTorch</a> - Makine öğrenimi için güçlü bir çerçeve.</li>
-            <li><a href="https://www.coursera.org" target="_blank">Coursera - AI Courses</a> - Yapay zeka eğitim kursları.</li>
-            <li><a href="https://towardsdatascience.com" target="_blank">Towards Data Science</a> - Yapay zeka ve veri bilimi makaleleri.</li>
-            <li><a href="https://www.kaggle.com" target="_blank">Kaggle</a> - Veri bilimciler için yarışmalar ve veri setleri.</li>
-            <li><a href="https://github.com/topics/artificial-intelligence" target="_blank">GitHub - AI Projects</a> - Yapay zeka projeleri deposu.</li>
-            <li><a href="https://machinelearningmastery.com" target="_blank">Machine Learning Mastery</a> - Makine öğrenimi rehberleri.</li>
-            <li><a href="https://deepai.org" target="_blank">DeepAI</a> - Yapay zeka araçları ve API'ler.</li>
-            <li><a href="https://aiethicslab.com" target="_blank">AI Ethics Lab</a> - Yapay zeka etiği üzerine çalışmalar.</li>
-        </ul>
-
-        <div class="ad-section">
-            <p>Reklam Alanı</p>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Yapay Zeka TR. Tüm hakları saklıdır.</p>
-    </footer>
-</body>
-</html>
+            <blockquote>"Geleceğin yapay zekası, insan hayatını dönüştürebile
