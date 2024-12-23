@@ -33,11 +33,15 @@
             position: fixed;
             bottom: 0;
             width: 100%;
-            background: #000;
-            color: #fff;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
             text-align: center;
             padding: 15px;
             z-index: 9999;
+            display: none;
+        }
+        #consent-banner.show {
+            display: block;
         }
         #consent-banner button {
             margin-left: 10px;
@@ -45,9 +49,13 @@
             color: white;
             border: none;
             padding: 10px;
+            border-radius: 5px;
         }
         #consent-banner button.manage {
             background: #f0ad4e;
+        }
+        .content-section {
+            margin-bottom: 40px;
         }
         #opening-animation {
             display: flex;
@@ -92,8 +100,8 @@
     </header>
 
     <div class="container my-5">
-        <div class="row">
-            <div class="col-lg-8 mb-4">
+        <div class="row content-section">
+            <div class="col-md-12">
                 <article>
                     <h2 class="mb-3">Yapay Zeka Nedir?</h2>
                     <p>Yapay zeka (YZ), bilgisayarların insanlar gibi düşünmesini, öğrenmesini ve problem çözmesini sağlayan bir bilim dalıdır. 
@@ -103,34 +111,28 @@
                     doğrudan uygulamalarıdır. Her gün gelişmeye devam eden bu alanda büyük fırsatlar bulunmaktadır.</p>
                     <a href="yapay-zeka-nedir.html" class="btn btn-primary">Devamını Oku</a>
                 </article>
-                <div class="ad-section">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8122979915343155"
-                         crossorigin="anonymous"></script>
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-format="fluid"
-                         data-ad-layout-key="-6t+ed+2i-1n-4w"
-                         data-ad-client="ca-pub-8122979915343155"
-                         data-ad-slot="3727373508"></ins>
-                    <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
             </div>
+        </div>
 
-            <div class="col-lg-4 mb-4">
-                <div class="ad-section">
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-8122979915343155"
-                         data-ad-slot="2456560411"
-                         data-ad-format="auto"
-                         data-full-width-responsive="true"></ins>
-                    <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
-                <article class="mt-4">
+        <div class="row content-section">
+            <div class="col-md-12 ad-section">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8122979915343155"
+                         crossorigin="anonymous"></script>
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-format="fluid"
+                     data-ad-layout-key="-6t+ed+2i-1n-4w"
+                     data-ad-client="ca-pub-8122979915343155"
+                     data-ad-slot="3727373508"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+
+        <div class="row content-section">
+            <div class="col-md-12">
+                <article>
                     <h2 class="mb-3">Yapay Zekanın Geleceği</h2>
                     <p>YZ teknolojileri hızla gelişiyor ve birçok sektörde devrim yaratıyor. Özellikle sağlık, finans ve eğitim gibi kritik alanlarda 
                     yeni çözümler sunmaya devam ediyor. Gelecekte, yapay zekanın insana daha fazla entegre olduğu bir dünyaya şahit olabiliriz.</p>
@@ -148,24 +150,23 @@
         </div>
     </footer>
 
+    <div id="consent-banner" class="show">
+        Bu site, size daha iyi bir deneyim sunmak için çerezler kullanır.
+        <button id="accept-consent">İzin ver</button>
+        <button id="manage-consent" class="manage">Seçenekleri yönet</button>
+    </div>
+
     <script>
         // Kullanıcı Rızası Mesajı
         function initializeConsent() {
             const consentGiven = localStorage.getItem('consentGiven');
 
             if (!consentGiven) {
-                const consentMessage = `
-                    <div id="consent-banner">
-                        Bu site, size daha iyi bir deneyim sunmak için çerezler kullanır.
-                        <button id="accept-consent">İzin ver</button>
-                        <button id="manage-consent" class="manage">Seçenekleri yönet</button>
-                    </div>
-                `;
-                document.body.insertAdjacentHTML('beforeend', consentMessage);
+                document.getElementById('consent-banner').classList.add('show');
 
                 document.getElementById('accept-consent').addEventListener('click', () => {
                     localStorage.setItem('consentGiven', 'true');
-                    document.getElementById('consent-banner').remove();
+                    document.getElementById('consent-banner').classList.remove('show');
                 });
 
                 document.getElementById('manage-consent').addEventListener('click', () => {
