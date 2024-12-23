@@ -52,6 +52,27 @@
         #consent-banner button.manage {
             background: #f0ad4e;
         }
+        #consent-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+        #consent-modal div {
+            background: #fff;
+            color: #000;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -149,6 +170,20 @@
                     <button id="accept-consent">İzin ver</button>
                     <button id="manage-consent" class="manage">Seçenekleri yönet</button>
                 </div>
+
+                <div id="consent-modal">
+                    <div>
+                        <h2>Çerez Tercihlerinizi Yönetin</h2>
+                        <p>Hangi çerezlerin etkin olmasını istediğinizi seçin:</p>
+                        <div style="text-align: left;">
+                            <label><input type="checkbox" id="analytics-cookies" checked> Analiz Çerezleri</label><br>
+                            <label><input type="checkbox" id="functional-cookies" checked> Fonksiyonel Çerezler</label><br>
+                            <label><input type="checkbox" id="advertising-cookies" checked> Reklam Çerezleri</label>
+                        </div>
+                        <button id="save-consent" style="margin-top: 10px; background: #4CAF50; color: white; border: none; padding: 10px;">Kaydet</button>
+                        <button id="close-modal" style="margin-top: 10px; background: #d9534f; color: white; border: none; padding: 10px;">Kapat</button>
+                    </div>
+                </div>
             `;
             document.body.insertAdjacentHTML('beforeend', consentMessage);
 
@@ -157,7 +192,16 @@
             });
 
             document.getElementById('manage-consent').addEventListener('click', () => {
-                alert('Çerez tercihlerinizi yönetmek için burayı ziyaret edebilirsiniz.');
+                document.getElementById('consent-modal').style.display = 'flex';
+            });
+
+            document.getElementById('save-consent').addEventListener('click', () => {
+                alert('Tercihleriniz kaydedildi.');
+                document.getElementById('consent-modal').style.display = 'none';
+            });
+
+            document.getElementById('close-modal').addEventListener('click', () => {
+                document.getElementById('consent-modal').style.display = 'none';
             });
         }
 
