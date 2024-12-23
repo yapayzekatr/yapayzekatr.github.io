@@ -57,6 +57,14 @@
         .content-section {
             margin-bottom: 40px;
         }
+        blockquote {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #555;
+            border-left: 5px solid #007bff;
+            padding-left: 10px;
+            margin: 20px 0;
+        }
         #opening-animation {
             display: flex;
             justify-content: center;
@@ -104,6 +112,7 @@
             <div class="col-md-12">
                 <article>
                     <h2 class="mb-3">Yapay Zeka Nedir?</h2>
+                    <blockquote>"Yapay zeka, makinelerin insan gibi düşünme ve öğrenme yeteneğini kazanmasını sağlayan bir bilim dalıdır."</blockquote>
                     <p>Yapay zeka (YZ), bilgisayarların insanlar gibi düşünmesini, öğrenmesini ve problem çözmesini sağlayan bir bilim dalıdır. 
                     Günümüzde tıbbi teşhis, dil işleme, görüntü tanıma gibi alanlarda yoğun bir şekilde kullanılmaktadır. 
                     YZ, makine öğrenimi ve derin öğrenme algoritmalarıyla sürekli gelişiyor ve hayatımızın birçok alanını etkiliyor.</p>
@@ -134,6 +143,7 @@
             <div class="col-md-12">
                 <article>
                     <h2 class="mb-3">Yapay Zekanın Geleceği</h2>
+                    <blockquote>"Geleceğin yapay zekası, insan hayatını dönüştürebilecek potansiyele sahiptir."</blockquote>
                     <p>YZ teknolojileri hızla gelişiyor ve birçok sektörde devrim yaratıyor. Özellikle sağlık, finans ve eğitim gibi kritik alanlarda 
                     yeni çözümler sunmaya devam ediyor. Gelecekte, yapay zekanın insana daha fazla entegre olduğu bir dünyaya şahit olabiliriz.</p>
                     <p>Uzmanlar, YZ'nin etik ve güvenlik sorunlarına dikkat edilmesi gerektiğini vurguluyor. Güçlü bir altyapı ile desteklendiğinde, yapay zeka 
@@ -150,34 +160,31 @@
         </div>
     </footer>
 
-    <div id="consent-banner" class="show">
+    <div id="consent-banner">
         Bu site, size daha iyi bir deneyim sunmak için çerezler kullanır.
         <button id="accept-consent">İzin ver</button>
         <button id="manage-consent" class="manage">Seçenekleri yönet</button>
     </div>
 
     <script>
-        // Kullanıcı Rızası Mesajı
-        function initializeConsent() {
+        document.addEventListener('DOMContentLoaded', () => {
+            const consentBanner = document.getElementById('consent-banner');
             const consentGiven = localStorage.getItem('consentGiven');
 
             if (!consentGiven) {
-                document.getElementById('consent-banner').classList.add('show');
-
-                document.getElementById('accept-consent').addEventListener('click', () => {
-                    localStorage.setItem('consentGiven', 'true');
-                    document.getElementById('consent-banner').classList.remove('show');
-                });
-
-                document.getElementById('manage-consent').addEventListener('click', () => {
-                    alert('Çerezler yalnızca siteyi çalıştırmak için kullanılır. Veri toplamıyoruz.');
-                });
+                consentBanner.classList.add('show');
             }
-        }
 
-        document.addEventListener('DOMContentLoaded', initializeConsent);
+            document.getElementById('accept-consent').addEventListener('click', () => {
+                localStorage.setItem('consentGiven', 'true');
+                consentBanner.classList.remove('show');
+            });
 
-        // Animasyonun Kaybolması
+            document.getElementById('manage-consent').addEventListener('click', () => {
+                alert('Çerezler yalnızca siteyi çalıştırmak için kullanılır. Veri toplamıyoruz.');
+            });
+        });
+
         window.addEventListener('load', () => {
             setTimeout(() => {
                 document.getElementById('opening-animation').style.display = 'none';
